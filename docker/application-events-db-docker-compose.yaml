@@ -1,0 +1,14 @@
+services:
+  application-events-db:
+    image: postgres:17.4-alpine
+    container_name: application-events-db
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_USER: root
+      POSTGRES_DB: events
+    ports:
+      - "5440:5432"
+    volumes:
+      - application_events_data:/var/lib/postgresql/data
+volumes:
+  application_events_data:
