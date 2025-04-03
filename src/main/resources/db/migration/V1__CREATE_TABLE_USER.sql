@@ -7,7 +7,7 @@ CREATE TABLE tb_users
     email     VARCHAR(255) NOT NULL,
     phone     VARCHAR(255) NOT NULL,
     enabled   BOOLEAN      NOT NULL,
-    createdAt DATE         NOT NULL,
-    updatedAt DATE         NOT NULL,
-    deletedAt DATE
+    created_at DATE         NOT NULL,
+    updated_at DATE         NOT NULL,
+    deleted_at DATE
 );

@@ -40,13 +40,14 @@ public class User {
     private Boolean enabled;
 
     @CreatedDate
-    @Column(nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt;
 
     @LastModifiedDate
-    @Column(nullable = false)
+    @Column(name = "updated_at", nullable = false)
     private Instant updatedAt;
 
+    @Column(name = "deleted_at")
     private Instant deletedAt;
 
     public User(String username, String name, String email, String password, String phone){
@@ -61,27 +62,23 @@ public class User {
         this.deletedAt = null;
     }
 
-    public User updateName(String name){
+    public void updateName(String name){
         this.name = name;
         this.updatedAt = Instant.now();
-        return this;
     }
 
-    public User updateEmail(String email){
+    public void updateEmail(String email){
         this.email = email;
         this.updatedAt = Instant.now();
-        return this;
     }
 
-    public User updatePassword(String password){
+    public void updatePassword(String password){
         this.password = password;
         this.updatedAt = Instant.now();
-        return this;
     }
 
-    public User softDelete(){
+    public void softDelete(){
         this.enabled = false;
         this.deletedAt = Instant.now();
-        return this;
     }
 }
