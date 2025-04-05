@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class SMSServiceImpl implements SMSService {
 
+
     @Override
     public void send(String phone, String message) {
         log.info("phone: {} message: {}", phone, message);

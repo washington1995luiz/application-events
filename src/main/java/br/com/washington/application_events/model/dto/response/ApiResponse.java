@@ -5,5 +5,4 @@ public record ApiResponse(
         String message,
         Object data,
         Object error
-
 ){}
